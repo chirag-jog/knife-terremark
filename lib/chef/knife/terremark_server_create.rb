@@ -16,22 +16,18 @@
 # limitations under the License.
 #
 
-require 'fog'
-require 'highline'
-require 'net/ssh/multi'
-require 'readline'
-require 'net/scp'
-require 'chef/knife'
-require 'chef/json_compat'
-require 'tempfile'
-
 class Chef
   class Knife
     class TerremarkServerCreate < Knife
 
       deps do
         require 'fog'
+        require 'highline'
+        require 'net/ssh/multi'
         require 'readline'
+        require 'net/scp'
+        require 'chef/knife'
+        require 'tempfile'
         require 'chef/json_compat'
         require 'chef/knife/bootstrap'
         Chef::Knife::Bootstrap.load_deps
