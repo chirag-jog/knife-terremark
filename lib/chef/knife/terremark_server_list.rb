@@ -17,15 +17,18 @@
 # limitations under the License.
 #
 
-require 'fog'
-require 'highline'
-require 'chef/knife'
-require 'chef/json_compat'
-require 'tempfile'
-
 class Chef
   class Knife
     class TerremarkServerList < Knife
+
+      deps do
+        require 'fog'
+        require 'highline'
+        require 'chef/knife'
+        require 'chef/json_compat'
+        require 'tempfile'
+        Chef::Knife.load_deps
+      end
 
       banner "knife terremark server list (options)"
 

@@ -17,14 +17,18 @@
 # limitations under the License.
 #
 
-require 'fog'
-require 'highline'
-require 'chef/knife'
-require 'chef/json_compat'
-
 class Chef
   class Knife
     class TerremarkServerDelete < Knife
+
+      deps do
+        require 'fog'
+        require 'highline'
+        require 'chef/knife'
+        require 'chef/knife'
+        require 'chef/json_compat'
+        Chef::Knife.load_deps
+      end
 
       banner "knife terremark server delete SERVER (options)"
 
